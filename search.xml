@@ -4,13 +4,75 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2024/10/24/hello-world/"/>
-      <url>/2024/10/24/hello-world/</url>
+      <title>用python快速生成复利终值系数表</title>
+      <link href="/2024/11/11/hello-world/"/>
+      <url>/2024/11/11/hello-world/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
       
       
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 财务管理学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>用python快速生成复利终值系数表</title>
+      <link href="/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/"/>
+      <url>/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>复利终值系数（Future Value Factor，FVF）是指将现值按复利计算未来值的系数，公式如下：</p><p>[FVF = (1 + r)^n]</p><p>其中：</p><ul><li>( r ) 为利率（如 0.05 表示 5%）</li><li>( n ) 为期数</li></ul><p>为了生成一个包含期数从 1 到 60，利率从 0.01 到 0.10 的复利终值系数表，我们可以使用 Python 来编写函数并打印出这个表格。以下是代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">future_value_factor_table</span>(<span class="params">max_period=<span class="number">60</span>, max_rate=<span class="number">0.10</span></span>):</span><br><span class="line">    <span class="comment"># 创建期数范围和利率范围</span></span><br><span class="line">    periods = <span class="built_in">range</span>(<span class="number">1</span>, max_period + <span class="number">1</span>)</span><br><span class="line">    rates = [<span class="built_in">round</span>(rate, <span class="number">2</span>) <span class="keyword">for</span> rate <span class="keyword">in</span> [i / <span class="number">100</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">int</span>(max_rate * <span class="number">100</span>) + <span class="number">1</span>)]]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个空的 DataFrame 来存储结果</span></span><br><span class="line">    table = pd.DataFrame(index=periods)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算复利终值系数</span></span><br><span class="line">    <span class="keyword">for</span> rate <span class="keyword">in</span> rates:</span><br><span class="line">        table[<span class="string">f&quot;<span class="subst">&#123;<span class="built_in">int</span>(rate*<span class="number">100</span>)&#125;</span>%&quot;</span>] = [(<span class="number">1</span> + rate) ** n <span class="keyword">for</span> n <span class="keyword">in</span> periods]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打印结果表</span></span><br><span class="line">    pd.set_option(<span class="string">&#x27;display.float_format&#x27;</span>, <span class="string">&#x27;&#123;:.4f&#125;&#x27;</span>.<span class="built_in">format</span>)  <span class="comment"># 设置显示格式</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;复利终值系数表：&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(table)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数打印复利终值系数表</span></span><br><span class="line">future_value_factor_table()</span><br></pre></td></tr></table></figure><h3 id="解释">解释</h3><ol><li><strong><code>max_period</code></strong> 参数：表示最大期数（这里为 60）。</li><li><strong><code>max_rate</code></strong> 参数：表示最大利率（这里为 0.10，即 10%）。</li><li><strong><code>pd.DataFrame</code></strong>：用于创建表格，方便展示。</li><li><strong><code>(1 + rate) ** n</code></strong>：计算复利终值系数。</li></ol><h3 id="输出示例">输出示例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">复利终值系数表：</span><br><span class="line">      1%     2%     3%     4%     5%     6%     7%     8%     9%    10%</span><br><span class="line">1  1.0100 1.0200 1.0300 1.0400 1.0500 1.0600 1.0700 1.0800 1.0900 1.1000</span><br><span class="line">2  1.0201 1.0404 1.0609 1.0816 1.1025 1.1236 1.1449 1.1664 1.1881 1.2100</span><br><span class="line">3  1.0303 1.0612 1.0927 1.1249 1.1576 1.1910 1.2250 1.2597 1.2950 1.3310</span><br><span class="line">4  1.0406 1.0824 1.1255 1.1699 1.2155 1.2625 1.3108 1.3605 1.4116 1.4641</span><br><span class="line">...</span><br></pre></td></tr></table></figure><p>此函数能够一次性打印出复利终值系数表，方便在财务分析或投资计算中使用。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 财务管理学习笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>财务筹划是伪命题</title>
+      <link href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/"/>
+      <url>/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="税务筹划是伪命题">税务筹划是伪命题</h2><p>一个财税工作人员的水平判断，从来不是他能帮公司少交多少税而是他是不是在合适的时间<br>把税缴足了(不多交但千万不能少交)，能免税减税的那都白纸黑字在税法里面写清楚了，能就是能<br>不能就是不能。偷税漏税的税务筹划，补缴加罚款滞纳金那都是小事，多少同行和老板都进去了，一个<br>合格的财税工作者是替老板规避涉税风险的，不是背锅的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 税法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 财务管理学习笔记 </tag>
+            
+        </tags>
       
     </entry>
     

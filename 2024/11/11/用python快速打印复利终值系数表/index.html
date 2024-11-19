@@ -1,0 +1,169 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>用python快速生成复利终值系数表 | 啊杰的博客</title><meta name="author" content="啊杰"><meta name="copyright" content="啊杰"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="复利终值系数（Future Value Factor，FVF）是指将现值按复利计算未来值的系数，公式如下： [FVF &#x3D; (1 + r)^n] 其中：  ( r ) 为利率（如 0.05 表示 5%） ( n ) 为期数  为了生成一个包含期数从 1 到 60，利率从 0.01 到 0.10 的复利终值系数表，我们可以使用 Python 来编写函数并打印出这个表格。以下是代码： 123456789">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用python快速生成复利终值系数表">
+<meta property="og:url" content="https://yeqijie6.github.io/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/index.html">
+<meta property="og:site_name" content="啊杰的博客">
+<meta property="og:description" content="复利终值系数（Future Value Factor，FVF）是指将现值按复利计算未来值的系数，公式如下： [FVF &#x3D; (1 + r)^n] 其中：  ( r ) 为利率（如 0.05 表示 5%） ( n ) 为期数  为了生成一个包含期数从 1 到 60，利率从 0.01 到 0.10 的复利终值系数表，我们可以使用 Python 来编写函数并打印出这个表格。以下是代码： 123456789">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yeqijie6.github.io/images/33.png">
+<meta property="article:published_time" content="2024-11-11T08:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-11T08:00:00.000Z">
+<meta property="article:author" content="啊杰">
+<meta property="article:tag" content="财务管理学习笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yeqijie6.github.io/images/33.png"><link rel="shortcut icon" href="/images/a1.jpg"><link rel="canonical" href="https://yeqijie6.github.io/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '用python快速生成复利终值系数表',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="啊杰的博客" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-image: url(/images/32.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/a1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/2.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">啊杰的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">用python快速生成复利终值系数表</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">用python快速生成复利终值系数表</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-11T08:00:00.000Z" title="发表于 2024-11-11 16:00:00">2024-11-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-11T08:00:00.000Z" title="更新于 2024-11-11 16:00:00">2024-11-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">433</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>复利终值系数（Future Value Factor，FVF）是指将现值按复利计算未来值的系数，公式如下：</p>
+<p>[FVF = (1 + r)^n]</p>
+<p>其中：</p>
+<ul>
+<li>( r ) 为利率（如 0.05 表示 5%）</li>
+<li>( n ) 为期数</li>
+</ul>
+<p>为了生成一个包含期数从 1 到 60，利率从 0.01 到 0.10 的复利终值系数表，我们可以使用 Python 来编写函数并打印出这个表格。以下是代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">future_value_factor_table</span>(<span class="params">max_period=<span class="number">60</span>, max_rate=<span class="number">0.10</span></span>):</span><br><span class="line">    <span class="comment"># 创建期数范围和利率范围</span></span><br><span class="line">    periods = <span class="built_in">range</span>(<span class="number">1</span>, max_period + <span class="number">1</span>)</span><br><span class="line">    rates = [<span class="built_in">round</span>(rate, <span class="number">2</span>) <span class="keyword">for</span> rate <span class="keyword">in</span> [i / <span class="number">100</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">int</span>(max_rate * <span class="number">100</span>) + <span class="number">1</span>)]]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建一个空的 DataFrame 来存储结果</span></span><br><span class="line">    table = pd.DataFrame(index=periods)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算复利终值系数</span></span><br><span class="line">    <span class="keyword">for</span> rate <span class="keyword">in</span> rates:</span><br><span class="line">        table[<span class="string">f&quot;<span class="subst">&#123;<span class="built_in">int</span>(rate*<span class="number">100</span>)&#125;</span>%&quot;</span>] = [(<span class="number">1</span> + rate) ** n <span class="keyword">for</span> n <span class="keyword">in</span> periods]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打印结果表</span></span><br><span class="line">    pd.set_option(<span class="string">&#x27;display.float_format&#x27;</span>, <span class="string">&#x27;&#123;:.4f&#125;&#x27;</span>.<span class="built_in">format</span>)  <span class="comment"># 设置显示格式</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;复利终值系数表：&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(table)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用函数打印复利终值系数表</span></span><br><span class="line">future_value_factor_table()</span><br></pre></td></tr></table></figure>
+<h3 id="解释">解释</h3>
+<ol>
+<li><strong><code>max_period</code></strong> 参数：表示最大期数（这里为 60）。</li>
+<li><strong><code>max_rate</code></strong> 参数：表示最大利率（这里为 0.10，即 10%）。</li>
+<li><strong><code>pd.DataFrame</code></strong>：用于创建表格，方便展示。</li>
+<li><strong><code>(1 + rate) ** n</code></strong>：计算复利终值系数。</li>
+</ol>
+<h3 id="输出示例">输出示例</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">复利终值系数表：</span><br><span class="line">      1%     2%     3%     4%     5%     6%     7%     8%     9%    10%</span><br><span class="line">1  1.0100 1.0200 1.0300 1.0400 1.0500 1.0600 1.0700 1.0800 1.0900 1.1000</span><br><span class="line">2  1.0201 1.0404 1.0609 1.0816 1.1025 1.1236 1.1449 1.1664 1.1881 1.2100</span><br><span class="line">3  1.0303 1.0612 1.0927 1.1249 1.1576 1.1910 1.2250 1.2597 1.2950 1.3310</span><br><span class="line">4  1.0406 1.0824 1.1255 1.1699 1.2155 1.2625 1.3108 1.3605 1.4116 1.4641</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>此函数能够一次性打印出复利终值系数表，方便在财务分析或投资计算中使用。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://yeqijie6.github.io">啊杰</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://yeqijie6.github.io/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/">https://yeqijie6.github.io/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://yeqijie6.github.io" target="_blank">啊杰的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">财务管理学习笔记</a></div><div class="post-share"><div class="social-share" data-image="/images/33.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2024/11/11/hello-world/" title="用python快速生成复利终值系数表"><img class="cover" src="/images/33.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">用python快速生成复利终值系数表</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post 1$ hexo new &quot;My New Post&quot; More info: Writing Run server 1$ hexo server More info: Server Generate static files 1$ hexo generate More info: Generating Deploy to remote sites 1$ hexo deploy More info: Deployment </div></div></div></a><a class="pagination-related" href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/" title="财务筹划是伪命题"><img class="cover" src="/images/33.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">财务筹划是伪命题</div></div><div class="info-2"><div class="info-item-1">税务筹划是伪命题 一个财税工作人员的水平判断，从来不是他能帮公司少交多少税而是他是不是在合适的时间 把税缴足了(不多交但千万不能少交)，能免税减税的那都白纸黑字在税法里面写清楚了，能就是能 不能就是不能。偷税漏税的税务筹划，补缴加罚款滞纳金那都是小事，多少同行和老板都进去了，一个 合格的财税工作者是替老板规避涉税风险的，不是背锅的。 </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/11/11/hello-world/" title="用python快速生成复利终值系数表"><img class="cover" src="/images/33.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-11</div><div class="info-item-2">用python快速生成复利终值系数表</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start Create a new post 1$ hexo new &quot;My New Post&quot; More info: Writing Run server 1$ hexo server More info: Server Generate static files 1$ hexo generate More info: Generating Deploy to remote sites 1$ hexo deploy More info: Deployment </div></div></div></a><a class="pagination-related" href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/" title="财务筹划是伪命题"><img class="cover" src="/images/33.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-11</div><div class="info-item-2">财务筹划是伪命题</div></div><div class="info-2"><div class="info-item-1">税务筹划是伪命题 一个财税工作人员的水平判断，从来不是他能帮公司少交多少税而是他是不是在合适的时间 把税缴足了(不多交但千万不能少交)，能免税减税的那都白纸黑字在税法里面写清楚了，能就是能 不能就是不能。偷税漏税的税务筹划，补缴加罚款滞纳金那都是小事，多少同行和老板都进去了，一个 合格的财税工作者是替老板规避涉税风险的，不是背锅的。 </div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/a1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">啊杰</div><div class="author-info-description">中国·浙江</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yeqijie6"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/yeqijie6" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:yeqijie6@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-number">1.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">输出示例</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/11/11/hello-world/" title="用python快速生成复利终值系数表"><img src="/images/33.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用python快速生成复利终值系数表"/></a><div class="content"><a class="title" href="/2024/11/11/hello-world/" title="用python快速生成复利终值系数表">用python快速生成复利终值系数表</a><time datetime="2024-11-11T08:00:00.000Z" title="发表于 2024-11-11 16:00:00">2024-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/" title="用python快速生成复利终值系数表"><img src="/images/33.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用python快速生成复利终值系数表"/></a><div class="content"><a class="title" href="/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/" title="用python快速生成复利终值系数表">用python快速生成复利终值系数表</a><time datetime="2024-11-11T08:00:00.000Z" title="发表于 2024-11-11 16:00:00">2024-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/" title="财务筹划是伪命题"><img src="/images/33.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="财务筹划是伪命题"/></a><div class="content"><a class="title" href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/" title="财务筹划是伪命题">财务筹划是伪命题</a><time datetime="2024-11-11T08:00:00.000Z" title="发表于 2024-11-11 16:00:00">2024-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/" title="hexo博客学习文档"><img src="/images/33.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo博客学习文档"/></a><div class="content"><a class="title" href="/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/" title="hexo博客学习文档">hexo博客学习文档</a><time datetime="2021-01-11T08:00:00.000Z" title="发表于 2021-01-11 16:00:00">2021-01-11</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/images/32.png);"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By 啊杰</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
