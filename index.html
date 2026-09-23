@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>啊杰的博客 - 欢迎来到我的博客</title><meta name="author" content="啊杰"><meta name="copyright" content="啊杰"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="中国·浙江">
+<meta property="og:type" content="website">
+<meta property="og:title" content="啊杰的博客">
+<meta property="og:url" content="https://yeqijie6.github.io/index.html">
+<meta property="og:site_name" content="啊杰的博客">
+<meta property="og:description" content="中国·浙江">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yeqijie6.github.io/images/a1.jpg">
+<meta property="article:author" content="啊杰">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yeqijie6.github.io/images/a1.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "啊杰的博客",
+  "alternateName": [
+    "欢迎来到我的博客",
+    "yeqijie6.github.io"
+  ],
+  "url": "https://yeqijie6.github.io/"
+}</script><link rel="shortcut icon" href="/images/a1.jpg"><link rel="canonical" href="https://yeqijie6.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":false,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":true,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '啊杰的博客',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><link rel="stylesheet" href="/css/language-switcher.css"><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="啊杰的博客" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="啊杰的博客" type="application/rss+xml">
+<link rel="alternate" hreflang="en" href="/en/" title="EN">
+</head><body><div class="bg-animation" id="web_bg" style="background-image: url(/images/32.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/a1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/images/14.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">啊杰的博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">啊杰的博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/yeqijie6" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:yeqijie6@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="订阅-ATOM"><i class="fas fa-rss"></i></a><a class="social-icon" href="/rss2.xml" target="_blank" title="订阅-RSS2"><i class="fas fa-rss1"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/2025/05/11/%E8%B4%A2%E5%8A%A1%E8%8B%B1%E8%AF%AD/" title="财务中英文对照"><img class="post-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/14.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="财务中英文对照"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/05/11/%E8%B4%A2%E5%8A%A1%E8%8B%B1%E8%AF%AD/" title="财务中英文对照">财务中英文对照</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-05-11T08:00:00.000Z" title="发表于 2025-05-11 16:00:00">2025-05-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">A  Abandoned asset 废弃资产 Abandonment decision 废弃决策 Abandonment stage 废弃阶段 Abandonment value 废弃价值 Abatement 减免、冲销 Abatement of taxes 减税、退税 Abbreviated accounts 简式会计报 ABC system(of inventory control)分级存货控制制度 Ability to pay taxation 纳税能力 Ability to service debts 偿债能力 Abnormal cost 异常成本 Abnormal depreciation 异常折旧 Abnormal gain 异常利得、异常收益 Abnormal loss 异常损失 Abnormal shrinkage 异常盘亏 Abnormal spoilage 异常损耗 Abnormal yield curve 异常收益率曲线 About of circa 大约 Above par 超过票面值 Above the line 线上项目 Abscond 潜逃 Abs...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2025/01/31/my-first-bilingual-post/" title="我的第一篇双语文章"><img class="post-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我的第一篇双语文章"></a></div><div class="recent-post-info"><a class="article-title" href="/2025/01/31/my-first-bilingual-post/" title="我的第一篇双语文章">我的第一篇双语文章</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-01-31T02:00:00.000Z" title="发表于 2025-01-31 10:00:00">2025-01-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%8D%9A%E5%AE%A2/">博客</a></span></div><div class="content">欢迎来到我的双语博客！这是一篇示例文章，展示如何在 Hexo 中实现中英文切换功能。 什么是 i18n（国际化）？ i18n 是 Internationalization 的缩写（首字母 i，结尾字母 n，中间 18 个字母）。它是一种软件设计和开发的实践，用于使应用程序能够支持多种语言和地区。 Hexo 的 i18n 实现 Hexo 通过以下配置支持多语言：   配置文件设置 (_config.yml)：  language: [zh-CN, en] - 指定支持的语言 i18n_dir: :lang - 设置语言目录的格式    文件组织：  中文文章：source/_posts/zh-CN/ 英文文章：source/_posts/en/ 文件名保持一致，Hexo 自动识别语言    Front Matter 配置：  添加 lang: zh-CN 标识文章语言    如何创建双语文章 步骤 1：创建目录 12mkdir -p source/_posts/zh-CNmkdir -p source/_posts/en 步骤 2：创建同名 Markdown 文件 文件名必须相同，...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/" title="用python快速生成复利终值系数表"><img class="post-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/5.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用python快速生成复利终值系数表"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/" title="用python快速生成复利终值系数表">用python快速生成复利终值系数表</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-11T08:00:00.000Z" title="发表于 2024-11-11 16:00:00">2024-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">复利终值系数（Future Value Factor，FVF）是指将现值按复利计算未来值的系数，公式如下： [FVF = (1 + r)^n] 其中：  ( r ) 为利率（如 0.05 表示 5%） ( n ) 为期数  为了生成一个包含期数从 1 到 60，利率从 0.01 到 0.10 的复利终值系数表，我们可以使用 Python 来编写函数并打印出这个表格。以下是代码： 123456789101112131415161718192021import pandas as pddef future_value_factor_table(max_period=60, max_rate=0.10):    # 创建期数范围和利率范围    periods = range(1, max_period + 1)    rates = [round(rate, 2) for rate in [i / 100 for i in range(1, int(max_rate * 100) + 1)]]    # 创建一个空的 DataFrame 来存储结果    table = pd.Dat...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/" title="财务筹划是伪命题"><img class="post-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="财务筹划是伪命题"></a></div><div class="recent-post-info"><a class="article-title" href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/" title="财务筹划是伪命题">财务筹划是伪命题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-11-11T08:00:00.000Z" title="发表于 2024-11-11 16:00:00">2024-11-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%A8%8E%E6%B3%95/">税法</a></span></div><div class="content">税务筹划是伪命题 一个财税工作人员的水平判断，从来不是他能帮公司少交多少税而是他是不是在合适的时间 把税缴足了(不多交但千万不能少交)，能免税减税的那都白纸黑字在税法里面写清楚了，能就是能 不能就是不能。偷税漏税的税务筹划，补缴加罚款滞纳金那都是小事，多少同行和老板都进去了，一个 合格的财税工作者是替老板规避涉税风险的，不是背锅的。 </div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/" title="hexo博客学习文档"><img class="post-bg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/14.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo博客学习文档"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/" title="hexo博客学习文档">hexo博客学习文档</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-11T08:00:00.000Z" title="发表于 2021-01-11 16:00:00">2021-01-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></span></div><div class="content">hexo博客学习文档 安装 hexo 1npm install -g hexo-cli 创建 hexo 项目 1hexo init blog 安装依赖 12cd blognpm install 启动 hexo 服务器 1hexo server 部署 hexo 博客 1hexo deploy 常用命令 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281291301311321331341351361371381391401411421431441451461471481491501511...</div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/a1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">啊杰</div><div class="author-info-description">中国·浙江</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/yeqijie6"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/yeqijie6" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:yeqijie6@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="订阅-ATOM"><i class="fas fa-rss"></i></a><a class="social-icon" href="/rss2.xml" target="_blank" title="订阅-RSS2"><i class="fas fa-rss1"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2025/05/11/%E8%B4%A2%E5%8A%A1%E8%8B%B1%E8%AF%AD/" title="财务中英文对照"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/14.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="财务中英文对照"/></a><div class="content"><a class="title" href="/2025/05/11/%E8%B4%A2%E5%8A%A1%E8%8B%B1%E8%AF%AD/" title="财务中英文对照">财务中英文对照</a><time datetime="2025-05-11T08:00:00.000Z" title="发表于 2025-05-11 16:00:00">2025-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/01/31/my-first-bilingual-post/" title="我的第一篇双语文章"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/6.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我的第一篇双语文章"/></a><div class="content"><a class="title" href="/2025/01/31/my-first-bilingual-post/" title="我的第一篇双语文章">我的第一篇双语文章</a><time datetime="2025-01-31T02:00:00.000Z" title="发表于 2025-01-31 10:00:00">2025-01-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/" title="用python快速生成复利终值系数表"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/5.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="用python快速生成复利终值系数表"/></a><div class="content"><a class="title" href="/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/" title="用python快速生成复利终值系数表">用python快速生成复利终值系数表</a><time datetime="2024-11-11T08:00:00.000Z" title="发表于 2024-11-11 16:00:00">2024-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/" title="财务筹划是伪命题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/7.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="财务筹划是伪命题"/></a><div class="content"><a class="title" href="/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/" title="财务筹划是伪命题">财务筹划是伪命题</a><time datetime="2024-11-11T08:00:00.000Z" title="发表于 2024-11-11 16:00:00">2024-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/" title="hexo博客学习文档"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/14.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo博客学习文档"/></a><div class="content"><a class="title" href="/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/" title="hexo博客学习文档">hexo博客学习文档</a><time datetime="2021-01-11T08:00:00.000Z" title="发表于 2021-01-11 16:00:00">2021-01-11</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2/"><span class="card-category-list-name">博客</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%A8%8E%E6%B3%95/"><span class="card-category-list-name">税法</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/"><span class="card-category-list-name">笔记</span><span class="card-category-list-count">3</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 1.3em; color: #99a1ac">财务管理学习笔记</a> <a href="/tags/Hexo/" style="font-size: 1.5em; color: #99a9bf">Hexo</a> <a href="/tags/%E5%A4%9A%E8%AF%AD%E8%A8%80/" style="font-size: 1.1em; color: #999">多语言</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/05/">
+            <span class="card-archive-list-date">
+              五月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/01/">
+            <span class="card-archive-list-date">
+              一月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/11/">
+            <span class="card-archive-list-date">
+              十一月 2024
+            </span>
+            <span class="card-archive-list-count">2</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2021/01/">
+            <span class="card-archive-list-date">
+              一月 2021
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">85.4k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-09-23T13:41:01.305Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/images/32.webp);"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2019 - 2026 By 啊杰</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢","一枝秾艳露凝香，云雨巫山枉断肠。借问汉宫谁得似，可怜飞燕倚新妆","名花倾国两相欢，长得君王带笑看。解释春风无限恨，沉香亭北倚阑干。"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed && typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢","一枝秾艳露凝香，云雨巫山枉断肠。借问汉宫谁得似，可怜飞燕倚新妆","名花倾国两相欢，长得君王带笑看。解释春风无限恨，沉香亭北倚阑干。"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="/js/language-switcher.js"></script><script src="/js/busuanzi-offset.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="搜索文章" type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

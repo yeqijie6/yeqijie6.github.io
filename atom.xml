@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>啊杰</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <icon>https://yeqijie6.github.io/icon.png</icon>
+  <id>https://yeqijie6.github.io/</id>
+  <link href="https://yeqijie6.github.io/" rel="alternate"/>
+  <link href="https://yeqijie6.github.io/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, 啊杰</rights>
+  <subtitle>欢迎来到我的博客</subtitle>
+  <title>啊杰的博客</title>
+  <updated>2025-05-11T08:00:00.000Z</updated>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="笔记" scheme="https://yeqijie6.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="财务管理学习笔记" scheme="https://yeqijie6.github.io/tags/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://yeqijie6.github.io/2025/05/11/%E8%B4%A2%E5%8A%A1%E8%8B%B1%E8%AF%AD/</id>
+    <link href="https://yeqijie6.github.io/2025/05/11/%E8%B4%A2%E5%8A%A1%E8%8B%B1%E8%AF%AD/"/>
+    <published>2025-05-11T08:00:00.000Z</published>
+    <summary>按字母顺序整理的财务、会计常用术语中英文对照表。</summary>
+    <title>财务中英文对照</title>
+    <updated>2025-05-11T08:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="blog" scheme="https://yeqijie6.github.io/en/categories/blog/"/>
+    <category term="Hexo" scheme="https://yeqijie6.github.io/tags/Hexo/"/>
+    <category term="multilingual" scheme="https://yeqijie6.github.io/en/tags/multilingual/"/>
+    <id>https://yeqijie6.github.io/en/2025/01/31/my-first-bilingual-post/</id>
+    <link href="https://yeqijie6.github.io/en/2025/01/31/my-first-bilingual-post/"/>
+    <published>2025-01-31T02:00:00.000Z</published>
+    <summary>A demo of how Chinese/English switching works on this Hexo blog.</summary>
+    <title>My first bilingual article</title>
+    <updated>2025-01-31T02:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="博客" scheme="https://yeqijie6.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    <category term="Hexo" scheme="https://yeqijie6.github.io/tags/Hexo/"/>
+    <category term="多语言" scheme="https://yeqijie6.github.io/tags/%E5%A4%9A%E8%AF%AD%E8%A8%80/"/>
+    <id>https://yeqijie6.github.io/2025/01/31/my-first-bilingual-post/</id>
+    <link href="https://yeqijie6.github.io/2025/01/31/my-first-bilingual-post/"/>
+    <published>2025-01-31T02:00:00.000Z</published>
+    <summary>演示如何在 Hexo 中实现中英文切换。</summary>
+    <title>我的第一篇双语文章</title>
+    <updated>2025-01-31T02:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="note" scheme="https://yeqijie6.github.io/en/categories/note/"/>
+    <category term="Notes on Financial Management Learning" scheme="https://yeqijie6.github.io/en/tags/Notes-on-Financial-Management-Learning/"/>
+    <id>https://yeqijie6.github.io/en/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/</id>
+    <link href="https://yeqijie6.github.io/en/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/"/>
+    <published>2024-11-11T08:00:00.000Z</published>
+    <summary>A small Python function that prints a future value factor table for 1–60 periods at 1%–10% interest.</summary>
+    <title>Quickly generate compound interest terminal coefficient table using Python</title>
+    <updated>2024-11-11T08:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="tax law" scheme="https://yeqijie6.github.io/en/categories/tax-law/"/>
+    <category term="Notes on Financial Management Learning" scheme="https://yeqijie6.github.io/en/tags/Notes-on-Financial-Management-Learning/"/>
+    <id>https://yeqijie6.github.io/en/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/</id>
+    <link href="https://yeqijie6.github.io/en/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/"/>
+    <published>2024-11-11T08:00:00.000Z</published>
+    <summary>A finance professional's job is to pay taxes correctly and on time and avoid tax risk, not to help the boss pay less.</summary>
+    <title>Financial planning is a false proposition</title>
+    <updated>2024-11-11T08:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="笔记" scheme="https://yeqijie6.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="财务管理学习笔记" scheme="https://yeqijie6.github.io/tags/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://yeqijie6.github.io/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/</id>
+    <link href="https://yeqijie6.github.io/2024/11/11/%E7%94%A8python%E5%BF%AB%E9%80%9F%E6%89%93%E5%8D%B0%E5%A4%8D%E5%88%A9%E7%BB%88%E5%80%BC%E7%B3%BB%E6%95%B0%E8%A1%A8/"/>
+    <published>2024-11-11T08:00:00.000Z</published>
+    <summary>用 Python 编写函数，快速生成期数 1–60、利率 1%–10% 的复利终值系数表。</summary>
+    <title>用python快速生成复利终值系数表</title>
+    <updated>2024-11-11T08:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="税法" scheme="https://yeqijie6.github.io/categories/%E7%A8%8E%E6%B3%95/"/>
+    <category term="财务管理学习笔记" scheme="https://yeqijie6.github.io/tags/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://yeqijie6.github.io/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/</id>
+    <link href="https://yeqijie6.github.io/2024/11/11/%E7%A8%8E%E5%8A%A1%E7%AD%B9%E5%88%92%E6%98%AF%E4%BC%AA%E5%91%BD%E9%A2%98/"/>
+    <published>2024-11-11T08:00:00.000Z</published>
+    <summary>财税工作者的价值在于按时足额纳税、规避涉税风险，而不是替老板少交税。</summary>
+    <title>财务筹划是伪命题</title>
+    <updated>2024-11-11T08:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="note" scheme="https://yeqijie6.github.io/en/categories/note/"/>
+    <category term="Hexo" scheme="https://yeqijie6.github.io/tags/Hexo/"/>
+    <id>https://yeqijie6.github.io/en/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/</id>
+    <link href="https://yeqijie6.github.io/en/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/"/>
+    <published>2021-01-11T08:00:00.000Z</published>
+    <summary>Common commands and configuration notes from setting up a Hexo blog: install, write, and deploy.</summary>
+    <title>Hexo Blog Learning Document</title>
+    <updated>2021-01-11T08:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>啊杰</name>
+    </author>
+    <category term="笔记" scheme="https://yeqijie6.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="Hexo" scheme="https://yeqijie6.github.io/tags/Hexo/"/>
+    <id>https://yeqijie6.github.io/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/</id>
+    <link href="https://yeqijie6.github.io/2021/01/11/hexo%E5%8D%9A%E5%AE%A2%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3/"/>
+    <published>2021-01-11T08:00:00.000Z</published>
+    <summary>从安装、建站、写作到部署，记录搭建 Hexo 博客过程中的常用命令与配置要点。</summary>
+    <title>hexo博客学习文档</title>
+    <updated>2021-01-11T08:00:00.000Z</updated>
+  </entry>
+</feed>
